@@ -31,3 +31,28 @@ function sortChecked(array){
 
 sortChecked(myArray)
 console.log(myNewList)
+
+//////////////////////////////////////////////////////////////////////
+
+let arr=[9,4,56,8,3,5,2]
+
+function sorter(para1){
+    
+    if(para1[i]<para1[j]){
+        i++;
+        j++;
+        sorter(para1)
+    }
+    else if (para1[i]>para1[j]){
+       [para1[i],para1[j]]=[para1[j],para1[i]]
+        i=0 
+        j=1
+        sorter(para1)
+    }
+     else {  
+         return para1; 
+     }
+}
+
+sorter(arr)
+console.log(arr)

@@ -37,3 +37,37 @@ for(let i=0; i<a; i++){
 
 
 console.log(str)
+
+
+
+/////////////////////////////pyramid pattern///////////////////////////////////////////////
+
+let n = 5;
+let str='';
+
+// Reversed pyramid pattern
+for (let i = 0; i < n; i++) {
+  // printing spaces
+  for (let j = 0; j < i; j++) {
+    str+= ''
+  }
+  // printing star
+  for (let k = 0; k < (n - i) * 2 - 1; k++) {
+     str+= '*'
+  }
+   str+= '\n'
+}
+// pyramid pattern
+for (let i = 2; i <= n; i++) {
+  // printing spaces
+  for (let j = n; j > i; j--) {
+     str+= ''
+  }
+  // printing star
+  for (let k = 0; k < i * 2 - 1; k++) {
+   str+= '*'
+  }
+  str+= '\n'
+}
+
+console.log(str)

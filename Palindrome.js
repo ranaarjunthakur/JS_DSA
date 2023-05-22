@@ -20,7 +20,7 @@ function palindrome(str) {
 
     for ( var i = 0; i < mid; i++ ) {
         
-        if (str[i] !== str[len - 1 - i]) {
+        if (str[i] !== str[len - 1 - i]) {    // if first string word(n) !== last string word(n)  then false
             return false;
         }
     }
@@ -31,3 +31,11 @@ function palindrome(str) {
 let res = palindrome(str)
 
 console.log(res)
+
+///////////////////////////////////////////////////
+
+function isPalindrome(s) {
+    return s === s.split("").reverse().join("") ? true : false;
+}
+
+console.log(isPalindrome("noon"));

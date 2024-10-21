@@ -36,3 +36,26 @@ return str.split('').filter((val,index)=> str.indexOf(val) == str.lastIndexOf(va
 }
 
 console.log(nonRepeated(str));
+
+///////////////////////////////////////////////////////////////////
+
+let str = 'abacddbec';
+
+function nonRepeated(str) {
+  let count ={};
+  let res =[];
+  
+  for(let val of str){
+     count[val] ? ++ count[val] : (count[val]=1)
+  }
+  
+   for(let val of str){
+     if(count[val] == 1){
+       res.push(val);
+     }
+   }
+   
+   return res
+}
+
+console.log(nonRepeated(str));

@@ -35,3 +35,24 @@ function unique(arr){
 }
 
 console.log(unique(arr))
+
+//////////////////////////////////////////////////////
+
+// Sample array of objects
+let array = [
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+    { id: 1, name: 'John' },
+    { id: 3, name: 'Doe' },
+    { id: 2, name: 'Jane' }  
+];
+
+function getUniqueValues(array, key) {
+    return array.filter((obj, index, self) =>
+        self.findIndex(item => item[key] === obj[key]) === index
+    );
+}
+
+let uniqueArray = getUniqueValues(array, 'id');
+console.log(uniqueArray);
+

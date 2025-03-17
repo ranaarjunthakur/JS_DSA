@@ -56,3 +56,19 @@ function getUniqueValues(array, key) {
 let uniqueArray = getUniqueValues(array, 'id');
 console.log(uniqueArray);
 
+
+//////////////////////////////////////////////////////////////
+
+
+let arr = [1, 5, 3, 9, 7, 7, 1, 5, 9, 5];
+let uniqueValues = [];
+let seen = {};
+
+arr.forEach(item => {
+  if (!seen[item]) {
+    seen[item] = true;
+    uniqueValues.push(item);
+  }
+});
+
+console.log(uniqueValues);

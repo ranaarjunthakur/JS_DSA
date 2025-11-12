@@ -1,3 +1,27 @@
+let arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 8, 8];
+
+function countNonUnique(arr) {
+  const freq = {};
+  
+  for (let num of arr) {
+    freq[num] = (freq[num] || 0) + 1;
+  }
+
+  let count = 0;
+  for (let key in freq) {
+    if (freq[key] > 1) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countNonUnique(arr));
+
+///////////////////////////////////////////////////////////////////////
+
+
 let arr =[1,1,2,2,3,3,4,4,5,6,7,8,8]
 
 function unique (arr){

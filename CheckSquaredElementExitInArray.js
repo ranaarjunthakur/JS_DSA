@@ -22,3 +22,24 @@ function isSquare(arr1,arr2){
 
 let res = isSquare(arr1,arr2)
 console.log(res)
+
+///////////////////////////////////////////////////////
+
+
+function isSquare(arr1, arr2) {
+  return arr1.every(num => arr2.includes(num * num));
+}
+
+let arr1 = [1, 2, 3, 4];
+let arr2 = [1, 4, 9, 16];
+
+let res = isSquare(arr1, arr2);
+console.log(res); // true
+
+////////////////////////////////////////////////////
+
+function isSquare(arr1, arr2) {
+  const squares = new Set(arr2);
+  return arr1.every(num => squares.has(num * num));
+}
+

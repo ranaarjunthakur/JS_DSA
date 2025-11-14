@@ -72,3 +72,15 @@ arr.forEach(item => {
 });
 
 console.log(uniqueValues);
+
+/////////////////////////////////////////////////////////////
+
+
+const array = [1, 2, 2, 3, 4, 4, 5];
+const uniqueArray = [];
+array.forEach(item => {
+  if (!uniqueArray.includes(item)) {
+    uniqueArray.push(item);
+  }
+});
+console.log(uniqueArray); // Output: [1, 2, 3, 4, 5]

@@ -19,6 +19,37 @@ function longestSubstringWithoutRepeating(str) {
 
 console.log(longestSubstringWithoutRepeating('abcabcbb')); // Output: 'abc'
 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+let str = "abcabcbb";
+
+function findLongestUniqueSubstring(text) {
+  let longest = "";      // Stores the longest substring found
+  let current = "";      // Stores the current substring we're building
+
+  for (let i = 0; i < text.length; i++) {
+    let char = text[i];  // Get each character one by one
+
+    // If the character is already in current, remove characters from the start
+    while (current.includes(char)) {
+      current = current.slice(1); // Remove first character until no repeat
+    }
+
+    current += char; // Add the new character to current
+
+    // Update longest if current is longer
+    if (current.length > longest.length) {
+      longest = current;
+    }
+  }
+
+  return longest;
+}
+
+let result = findLongestUniqueSubstring(str);
+console.log(result); // Output: "abc"
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
 let str ="abcabcbb";

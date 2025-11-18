@@ -1,26 +1,5 @@
 ////////////////////BUBBLE SORT/////////////////////////////////////
 
-var arr = [5,6,3,1,2,4];  
-  
-bubbleSortAlgo(arr);  
-  
-function bubbleSortAlgo(arr){  
-    for(var i=0;i<arr.length;i++){  
-        for(var j=0;j<arr.length-i-1;j++){  
-            if(arr[j]>arr[j+1]){  
-                var tempValue= arr[j];  
-                arr[j]=arr[j+1];  
-                arr[j+1]=tempValue;  
-            }  
-        }  
-    }  
-    console.log(arr);  
-}  
-
-
-/////////////////////////////////////////////////////////////
-
-
 let arr =[6,7,8,9,10,1,2,3,4,5,11]
 
 
@@ -37,4 +16,29 @@ let arr =[6,7,8,9,10,1,2,3,4,5,11]
   
   let result = bubbleSort(arr)
   console.log(result)
+
+
+//////////////////////////////////////////////////////////
+
+var library = [ 
+  { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254 },
+  { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264 },
+  { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245 }
+];
+
+function sortByTitle(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j].title > arr[j + 1].title) {
+        // Swap the objects
+        [arr[j],arr[j+1]]=[arr[j+1],arr[j]]
+      }
+    }
+  }
+  return arr;
+}
+
+let sorted = sortByTitle(library);
+console.log(sorted);
+
   

@@ -1,7 +1,7 @@
 let arr=[1,2,4,6,7,8,9,2,3,4,5,6,8,2]
 
 function occur(arr){
-    let result ={}https://github.com/ranaarjunthakur/JS_DSA/blob/main/findOccurance.js
+    let result ={}
     
     for(let val of arr){
         if(result[val]){
@@ -23,7 +23,7 @@ function occur(arr){
 }
 console.log(occur(arr))
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////FIND MOST OCCUR VALUE///////////////////////////////////////////
 
  var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 
@@ -38,3 +38,24 @@ function mostOccur(arr){
 }
 
 console.log(mostOccur(arr1))
+
+////////////////////////FIND FIRST UNIQUE CHARACTER///////////////////////////////////////
+
+function firstUniqueChar(str) {
+ let obj ={}
+ 
+for(let val of str){
+  obj[val] ? ++obj[val] : (obj[val]=1)
+}
+ 
+ 
+ for(let val of str){
+   if(obj[val] === 1){
+     return val
+   }
+ }
+ 
+return null
+ 
+}
+console.log(firstUniqueChar("swiss")); // "w"

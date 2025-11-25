@@ -17,3 +17,26 @@ function allPairs(nums, target) {
 console.log(allPairs([2, 4, 5, 3], 7)); 
 console.log(allPairs([5, 3, 9, 2, 1], 3));
 console.log(allPairs([4, 5, 1, 3, 6, 8], 9));
+
+//////////////////////////////////////////////////////////
+
+const arr = [1, 2, 3, 4, 5];
+const target = 6;
+
+function findPairs(arr,target){
+  let seen = new Set();
+  let pair =[]
+  
+  for(let val of arr){
+    let complement = target - val
+    if(seen.has(complement)){
+      pair.push([complement,val])
+    }
+    seen.add(val)
+  }
+  return pair
+}
+
+
+console.log(findPairs(arr,target))  
+// [[2,4],[1,5]]

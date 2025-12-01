@@ -62,3 +62,26 @@ function pairIndices(arr, target) {
 let res = pairIndices(arr, 5);
 console.log(res); // [[0,3],[1,2]]
 
+//////////////////////////////////////////////////////////
+
+let arr = [1,2,3,4,5,6];
+
+function pairIndices(arr, target) {
+  let pairs = [];
+  let seen = new Map(); // store value → index
+
+  for (let i = 0; i < arr.length; i++) {
+    let complement = target - arr[i];
+    if (seen.has(complement)) {
+      pairs.push([seen.get(complement), i]);
+    }
+    seen.set(arr[i], i);
+  }
+
+  return pairs;
+}
+
+let res = pairIndices(arr, 5);
+console.log(res); // [[0,3],[1,2]]
+
+

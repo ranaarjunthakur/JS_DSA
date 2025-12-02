@@ -59,3 +59,12 @@ return null
  
 }
 console.log(firstUniqueChar("swiss")); // "w"
+
+////////////////////////count the occurrences of a character in a string//////////////////////////////////////
+
+function countChar(str, char) 
+{
+  return str.split(char).length - 1;
+}
+
+console.log(countChar('GeeksForGeeks', 'G'));

@@ -48,3 +48,13 @@ function thirdLargest(arr){
 let res = thirdLargest(arr)
 console.log(res)
 
+/////////////////////Second Largest///////////////////////////////
+
+
+const arr = [10, 5, 8, 20, 15];
+
+// Remove duplicates, sort in descending order, and pick second element
+const secondLargest = [...new Set(arr)].sort((a, b) => b - a)[1];
+
+console.log(secondLargest);
+

@@ -97,3 +97,23 @@ function generateNumberPattern(n) {
 }
 
 generateNumberPattern(5);
+
+/////////////////////////////////////////////////////////////////////////
+
+let str ='';
+let num =1
+
+for(let i=1; i<=5;i++){
+  for(let j=1; j<=i-1;j++){
+    str += num + " ";
+    num++
+  }
+  
+  str += '\n'
+}
+
+console.log(str) =>
+1 
+2 3 
+4 5 6 
+7 8 9 10 

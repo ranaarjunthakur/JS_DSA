@@ -79,3 +79,19 @@ array.forEach(item => {
   }
 });
 console.log(uniqueArray); // Output: [1, 2, 3, 4, 5]
+
+
+
+///////////////////////////// REDUCE + INDEXOF ///////////////////////////////////
+
+const arr = [1, 2, 1, 3, 4, 3, 2];
+
+const unique = arr.reduce((result, value) => {
+  if (result.indexOf(value) === -1) {
+    result.push(value);+
+  }
+  return result;
+}, []);
+
+console.log(unique);
+

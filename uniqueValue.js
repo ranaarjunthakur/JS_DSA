@@ -1,42 +1,39 @@
+//////////////////////////USING SET/////////////////////////////////
+
+
+const arr1 = [1, 2, 3, 4, 5, 5, 1, 2, 3, 4];
+const uniqueArr1 = [...new Set(arr1)];
+console.log(uniqueArr1);
+
+
+/////////////////////////USING FOOR LOOP/////////////////////////////////
+
 let arr = [1, 5, 3, 9, 7, 7, 1, 5, 9, 5];
 
-function unique(arr) {
-  let uniqueArr = [];
-  
-  for (let i = 0; i < arr.length; i++) {
-    let exists = false;
-    
-    // Check if the current element is already in the uniqueArr
-    for (let j = 0; j < uniqueArr.length; j++) {
-      if (arr[i] === uniqueArr[j]) {
-        exists = true;
-        break;
-      }
-    }
+const getUniqueArray = (arr) => {
+  var result = [];
 
-    // If it's not in uniqueArr, add it
-    if (!exists) {
-      uniqueArr.push(arr[i]);
+  for (var i = 0; i < arr.length; i++) {
+    if (result.indexOf(arr[i]) === -1) {
+      result.push(arr[i]);
     }
   }
-  
-  return uniqueArr;
+
+  return result;
 }
 
-console.log(unique(arr));
 
-
-////////////////////////////////////////////////////////
+///////////////////// USING FILTER///////////////////////////////////
 
 let arr =[1, 5, 3, 9, 7,7,1,5,9,5]
 
 function unique(arr){
-  return  arr.filter((val,index)=> arr.indexOf(val)==index)
+  return  arr.filter((val,index)=> index == arr.indexOf(val))
 }
 
 console.log(unique(arr))
 
-//////////////////////////////////////////////////////
+//////////////////////USING FILTER WITH JSON.stringify()////////////////////////////////
 
 // Sample array of objects
 let array = [
@@ -47,17 +44,15 @@ let array = [
     { id: 2, name: 'Jane' }  
 ];
 
-function getUniqueValues(array, key) {
-    return array.filter((obj, index, self) =>
-        self.findIndex(item => item[key] === obj[key]) === index
-    );
+function getUniqueValues(arr) {
+  
+  return  arr.filter((val,index,self)=> index === self.findIndex((v=> v.id == val.id)))    //with Id
+  return  arr.filter((val,index,self)=> index === self.findIndex((v=> JSON.stringify(v) == JSON.stringify(val))))  // Without Id Using JSON.stringify()
 }
-
-let uniqueArray = getUniqueValues(array, 'id');
+let uniqueArray = getUniqueValues(array);
 console.log(uniqueArray);
 
-
-//////////////////////////////////////////////////////////////
+//////////////////////// USING FOREACH METHOD WITH  OBJECT//////////////////////////////////////
 
 
 let arr = [1, 5, 3, 9, 7, 7, 1, 5, 9, 5];
@@ -73,7 +68,7 @@ arr.forEach(item => {
 
 console.log(uniqueValues);
 
-/////////////////////////////////////////////////////////////
+///////////////////////// FOREACH + INCLUDES METHOD////////////////////////////////////
 
 
 const array = [1, 2, 2, 3, 4, 4, 5];

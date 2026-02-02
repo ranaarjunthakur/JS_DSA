@@ -42,6 +42,11 @@ if (!Array.prototype.filter) {
     return result;
   };
 }
+
+[1, 2, 3, 4].filter(function (n) {
+  return n > 2;
+});
+  
 //////////////////////////////FOREACH METHOD//////////////////////////////////////////
 
 if (!Array.prototype.forEach) {
@@ -75,3 +80,17 @@ if (!Array.prototype.forEach) {
     return accumulator;
   };
 }
+/////////////////////////////SUM OF NUMBER/////////////////////////////////////////////
+
+Array.prototype.sum = function () {
+  let total = 0;
+
+  for (let i = 0; i < this.length; i++) {
+    total += this[i];
+  }
+
+  return total;
+};
+
+let nums = [1, 2, 3, 4, 5];
+console.log(nums.sum());
